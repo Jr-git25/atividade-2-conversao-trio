@@ -1,32 +1,148 @@
-*{
+/* ==========================================================================
+   Configurações Globais e Reset
+   ========================================================================== */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Corpo da página com um degradê moderno e centralização */
 .body_moeda {
-    background-color: rgba(161, 128, 86, 0.671);
-}
-.body_moeda h1 {
-    color: beige;
-}
-.body_moeda {
-    background-color: rgba(161, 128, 86, 0.671);
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    padding: 20px;
 }
 
+/* ==========================================================================
+   Menu de Navegação
+   ========================================================================== */
 .menu_navegacao {
+    position: absolute;
+    top: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.menu_navegacao a {
+    color: #b0bec5;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Destaque para a página atual (Moeda) e efeito Hover */
+.menu_navegacao a:hover {
+    color: #00ff87;
+    text-shadow: 0 0 8px rgba(0, 255, 135, 0.6);
+}
+
+/* ==========================================================================
+   Conteúdo Principal (Card de Conversão)
+   ========================================================================== */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 25px;
     text-align: center;
+    background: linear-gradient(to right, #00f2fe, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
 }
 
+/* Formatando a estrutura como um card centralizado */
 .label_class {
-    color: beige;
+    font-size: 1rem;
+    color: #e0e0e0;
+    margin-bottom: 8px;
+    display: block;
+    width: 100%;
+    max-width: 320px;
 }
 
-
-.index_nav, .tempo_nav {
-    color: rgb(118, 145, 145);
+/* Estilização do Input de Número */
+input[type="number"] {
+    width: 100%;
+    max-width: 320px;
+    padding: 12px 15px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.07);
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
 }
 
-.unidade_nav, .temperatura_nav {
-    color: rgb(118, 145, 145);
+input[type="number"]:focus {
+    border-color: #00f2fe;
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+}
+
+/* Estilização do Botão */
+#btnGerar {
+    width: 100%;
+    max-width: 320px;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #00f2fe 0%, #4facfe 100%);
+    color: #0f2027;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+}
+
+#btnGerar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 242, 254, 0.6);
+}
+
+#btnGerar:active {
+    transform: translateY(1px);
+}
+
+/* ==========================================================================
+   Área de Resultado
+   ========================================================================== */
+#resultadoConversao {
+    margin-top: 25px;
+    padding: 15px;
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-radius: 8px;
+    background: rgba(0, 255, 135, 0.1);
+    border: 1px solid rgba(0, 255, 135, 0.2);
+    color: #00ff87;
+    display: none; /* O JS deve mudar para 'block' ou 'flex' quando houver resultado */
+}
+
+/* Classe utilitária caso queira ativar o resultado via JS adicionando uma classe */
+#resultadoConversao.ativo {
+    display: block;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

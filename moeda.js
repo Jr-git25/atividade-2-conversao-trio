@@ -16,7 +16,7 @@ function gerarConversao() {
    
     let valorEmDolar = parseFloat(numeroInput.value);
 
-
+    resultadoConv.style.display = 'block';
     if (isNaN(valorEmDolar)) {
         resultadoConv.innerHTML = `<p style="color: red;">Por favor, digite um valor válido.</p>`;
         return; 
@@ -33,3 +33,4 @@ function gerarConversao() {
 
 
 btnGerar.addEventListener('click', gerarConversao);
+
