@@ -1,39 +1,223 @@
+/* ===== RESET ===== */
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* ===== BODY ===== */
+
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
+
+    min-height: 100vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.7)
+    ),
+    url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1600");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: white;
+
+    text-align: center;
+
+    padding-top: 120px;
 }
-.container{
-    max-width: 1200px;
+
+/* ===== MENU ===== */
+
+.menu_conversao{
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    background: rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+
+    z-index: 1000;
+}
+
+.menu_conversao ul{
+    list-style: none;
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
     padding: 20px;
 }
 
-.menu_conversao{
-    text-align: center;
-    margin-top: 30px;
-}
-.menu_conversao ul{
-    list-style: none;
-}
-.menu_conversao ul li{
-    display: inline-block;
-    margin: 0 15px;
-}
-.menu_conversao ul li a{
+.menu_conversao a{
     text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    padding: 10px 20px;
-    border: 2px solid #333;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-.menu_conversao ul li a:hover{
-    background-color: #333;
+
     color: white;
+
+    font-weight: bold;
+
+    padding: 12px 20px;
+
+    border-radius: 30px;
+
+    transition: 0.3s;
+}
+
+.menu_conversao a:hover{
+
+    background: #ff6b35;
+
+    color: white;
+
+    box-shadow: 0 0 20px #ff6b35;
+
+    transform: translateY(-3px);
+}
+
+/* ===== TITULO ===== */
+
+h1{
+
+    font-size: 50px;
+
+    margin-bottom: 40px;
+
+    text-shadow: 0 0 20px #ff6b35;
+}
+
+/* ===== CONTAINER ===== */
+
+.container{
+
+    width: 400px;
+
+    max-width: 90%;
+
+    margin: auto;
+
+    padding: 40px;
+
+    background: rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(20px);
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* ===== LABEL ===== */
+
+label{
+
+    display: block;
+
+    font-size: 20px;
+
+    margin-bottom: 15px;
+}
+
+/* ===== INPUT ===== */
+
+input{
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 18px;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+}
+
+/* ===== BOTÃO ===== */
+
+button{
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #ff6b35;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover{
+
+    transform: scale(1.05);
+
+    box-shadow: 0 0 25px #ff6b35;
+
+    background: #ff824d;
+}
+
+/* ===== RESULTADO ===== */
+
+#resultado{
+
+    margin-top: 25px;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    color: #ffd166;
+}
+
+/* ===== RESPONSIVO ===== */
+
+@media(max-width: 768px){
+
+    h1{
+
+        font-size: 35px;
+    }
+
+    .container{
+
+        padding: 25px;
+    }
+
+    .menu_conversao a{
+
+        font-size: 14px;
+
+        padding: 10px 15px;
+    }
 }
