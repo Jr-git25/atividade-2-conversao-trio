@@ -3,3 +3,30 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.body_moeda {
+    background-color: rgba(161, 128, 86, 0.671);
+}
+.body_moeda h1 {
+    color: beige;
+}
+.body_moeda {
+    background-color: rgba(161, 128, 86, 0.671);
+}
+
+.menu_navegacao {
+    text-align: center;
+}
+
+.label_class {
+    color: beige;
+}
+
+
+.index_nav, .tempo_nav {
+    color: rgb(118, 145, 145);
+}
+
+.unidade_nav, .temperatura_nav {
+    color: rgb(118, 145, 145);
+}

@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Conversão Moedas</title>
+    <link rel="stylesheet" href="moeda.css">
 </head>
-<body>
-    
+<body class="body_moeda">
+    <nav class="menu_navegacao">
+        <a class="index_nav" href="index.html">Inicio</a>
+        <a class="tempo_nav" href="tempo.html">Tempo</a>
+        <a class="temperatura_nav" href="temperatura.html">Temperatura</a>
+        <a class="unidade_nav" href="unidade.html">Unidade</a>
+    </nav>
+
+    <h1>Conversão Dolar para Real</h1>
+
+    <label class="label_class" for="numeroInput">Digite um número: </label>
+    <input type="number" id="numeroInput" placeholder="Digite um valor.: ">
+    <button id="btnGerar">Gerar Conversão</button>
+
+    <div id="resultadoConversao"></div>
+
+    <script src="moeda.js"></script>
 </body>
 </html>
